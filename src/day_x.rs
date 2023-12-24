@@ -4,7 +4,7 @@ const inputs_folder: &str = "src/inputs/day_x";
 use crate::generic;
 
 
-fn solve_puzzle(input_filename: &str, part_2: bool) -> usize {
+fn solve_puzzle(input_filename: String, part_2: bool) -> usize {
     let input_lines = generic::read_in_file(input_filename);
 
 
@@ -24,28 +24,28 @@ mod tests {
 
     #[test]
     fn example_1() {
-        let answer = solve_puzzle(inputs_folder + "/input_example_1.txt", false);
+        let answer = solve_puzzle(inputs_folder.to_owned() + "/input_example_1.txt", false);
         println!("Answer = {:?}", answer);
         assert!(answer == 13);
     }
 
     #[test]
     fn part_1() {
-        let answer = solve_puzzle(inputs_folder + "/input.txt", false);
+        let answer = solve_puzzle(inputs_folder.to_owned() + "/input.txt", false);
         println!("Answer = {:?}", answer);
         assert!(answer == 21138);
     }
 
     #[test]
     fn example_2() {
-        let answer = solve_puzzle(inputs_folder + "/input_example_1.txt", true);
+        let answer = solve_puzzle(inputs_folder.to_owned() + "/input_example_1.txt", true);
         println!("Answer = {:?}", answer);
         assert!(answer == 30);
     }
 
     #[test]
     fn part_2() {
-        let answer = solve_puzzle(inputs_folder + "/input.txt", true);
+        let answer = solve_puzzle(inputs_folder.to_owned() + "/input.txt", true);
         println!("Answer = {:?}", answer);
         assert!(answer == 7185540);
     }
