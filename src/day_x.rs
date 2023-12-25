@@ -5,7 +5,7 @@ use crate::generic;
 
 
 fn solve_puzzle(input_filename: String, part_2: bool) -> usize {
-    let input_lines = generic::read_in_file(input_filename);
+    let input_lines = generic::read_in_file(input_filename.as_str());
 
 
 
