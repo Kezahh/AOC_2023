@@ -1,4 +1,4 @@
-const inputs_folder: &str = "src/inputs/day_7";
+const INPUTS_FOLDER: &str = "src/inputs/day_7";
 
 #[warn(dead_code)]
 use crate::generic;
@@ -236,28 +236,28 @@ mod tests {
 
     #[test]
     fn example_1() {
-        let answer = solve_puzzle(inputs_folder.to_owned() + "/input_example_1.txt", false);
+        let answer = solve_puzzle(INPUTS_FOLDER.to_owned() + "/input_example_1.txt", false);
         println!("Answer = {:?}", answer);
         assert!(answer == 6440);
     }
 
     #[test]
     fn part_1() {
-        let answer = solve_puzzle(inputs_folder.to_owned() + "/input.txt", false);
+        let answer = solve_puzzle(INPUTS_FOLDER.to_owned() + "/input.txt", false);
         println!("Answer = {:?}", answer);
         assert!(answer == 252295678);
     }
 
     #[test]
     fn example_2() {
-        let answer = solve_puzzle(inputs_folder.to_owned() + "/input_example_1.txt", true);
+        let answer = solve_puzzle(INPUTS_FOLDER.to_owned() + "/input_example_1.txt", true);
         println!("Answer = {:?}", answer);
         assert!(answer == 5905);
     }
 
     #[test]
     fn part_2() {
-        let answer = solve_puzzle(inputs_folder.to_owned() + "/input.txt", true);
+        let answer = solve_puzzle(INPUTS_FOLDER.to_owned() + "/input.txt", true);
         println!("Answer = {:?}", answer);
         assert!(answer == 250577259);
     }
