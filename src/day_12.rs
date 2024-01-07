@@ -70,7 +70,7 @@ impl SpringRecord {
         return self.spring_map.len() + 1;
     }
 
-    fn get_gap_set(&self) -> HashSet<Vec<usize>> {
+    fn _get_gap_set(&self) -> HashSet<Vec<usize>> {
         let mut all_gaps: Vec<Vec<usize>> = Vec::new();
         let mut gaps: Vec<usize>;
         let mut spares_index: Vec<usize> = vec![0; self.get_spares()];

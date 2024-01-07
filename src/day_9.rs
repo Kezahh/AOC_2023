@@ -2,7 +2,7 @@ const INPUTS_FOLDER: &str = "src/inputs/day_9";
 
 #[warn(dead_code)]
 use crate::generic;
-use std::{collections::HashSet, thread::current};
+use std::collections::HashSet;
 
 #[derive(Debug,Eq,PartialEq, Clone)]
 struct History {

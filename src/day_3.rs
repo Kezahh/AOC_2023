@@ -1,6 +1,5 @@
 #[warn(dead_code)]
 use crate::generic;
-use std::collections::HashMap;
 
 #[derive(Debug, Clone)]
 struct Number {

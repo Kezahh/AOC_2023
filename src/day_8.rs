@@ -72,7 +72,7 @@ impl NetworkNode {
     }
 }
 
-fn all_true(input_bool: Vec<bool>) -> bool {
+fn _all_true(input_bool: Vec<bool>) -> bool {
     let bool_set: HashSet<bool> = HashSet::from_iter(input_bool.clone());
     match bool_set.len() {
         1 => input_bool[0],

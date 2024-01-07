@@ -1,6 +1,5 @@
 #[warn(dead_code)]
 use crate::generic;
-use std::collections::HashMap;
 use std::collections::HashSet;
 
 #[derive(Debug, Clone)]
@@ -39,7 +38,7 @@ fn solve_puzzle(input_filename: &str, part_2: bool) -> usize {
 
     for i in 0..all_cards.len() {
         for j in 0..all_cards[i].get_winning_matches() {
-            for k in 0..all_cards[i].copies {
+            for _k in 0..all_cards[i].copies {
                 if (j + i) < (all_cards.len() - 1) {
                     all_cards[j + i + 1].copies += 1;
                 }

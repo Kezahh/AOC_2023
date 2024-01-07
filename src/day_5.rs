@@ -1,31 +1,31 @@
 #[warn(dead_code)]
 use crate::generic;
-use std::{collections::HashMap, thread::current};
+use std::collections::HashMap;
 
 #[derive(Clone, Debug, Eq, PartialEq, Hash)]
 enum Category {
-    seed,
-    soil,
-    fertilizer,
-    water,
-    light,
-    temperature,
-    humidity,
-    location,
+    Seed,
+    Soil,
+    Fertilizer,
+    Water,
+    Light,
+    Temperature,
+    Humidity,
+    Location,
 }
 
 impl Category {
     fn from_string(input_string: &str) -> Self {
         return match input_string {
-            "seed" => Self::seed,
-            "soil" => Self::soil,
-            "fertilizer" => Self::fertilizer,
-            "water" => Self::water,
-            "light" => Self::light,
-            "temperature" => Self::temperature,
-            "humidity" => Self::humidity,
-            "location" => Self::location,
-            _ => Self::seed,
+            "seed" => Self::Seed,
+            "soil" => Self::Soil,
+            "fertilizer" => Self::Fertilizer,
+            "water" => Self::Water,
+            "light" => Self::Light,
+            "temperature" => Self::Temperature,
+            "humidity" => Self::Humidity,
+            "location" => Self::Location,
+            _ => Self::Seed,
         }
     }
 }
@@ -230,7 +230,7 @@ fn solve_puzzle(input_filename: &str, part_2: bool) -> usize {
     if !part_2 {
         // PART 1
         for seed in almanac.seeds {
-            let mut current_category: Category = Category::seed;
+            let mut current_category: Category = Category::Seed;
             let mut current_number: usize = seed;
             let mut indent: String = "".to_string();
             while almanac.maps_by_src.contains_key(&current_category) {
@@ -249,7 +249,7 @@ fn solve_puzzle(input_filename: &str, part_2: bool) -> usize {
     } else {
         // PART 2
         let mut current_ranges: Vec<SeedRange>;
-        let mut current_category: Category = Category::seed;
+        let mut current_category: Category = Category::Seed;
 
         while almanac.maps_by_src.contains_key(&current_category) {
             current_ranges = seed_ranges.clone();
@@ -309,8 +309,8 @@ mod tests {
     fn run_cases() {
         let test_ranges: Vec<Range> = vec![Range{src_start: 20, dest_start: 40, length: 20}];
         let test_map = Map {
-            src_category: Category::seed,
-            dst_category: Category::soil,
+            src_category: Category::Seed,
+            dst_category: Category::Soil,
             ranges: test_ranges
         };
 

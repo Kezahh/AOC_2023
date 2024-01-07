@@ -260,7 +260,7 @@ fn solve_puzzle(input_filename: String, part_2: bool) -> usize {
     let map: PipeMap = PipeMap::from_input_lines(&input_lines);
     let start_position: &Pipe = map.get_start_pipe().expect("No start position found");
 
-    let mut neighbours: Vec<&Pipe> = map.get_neighbour_pipes(&start_position);
+    let neighbours: Vec<&Pipe> = map.get_neighbour_pipes(&start_position);
     let mut all_steps: Vec<usize> = Vec::new();
 
     let mut all_pipe_parts: Vec<&Pipe> = Vec::new();
@@ -356,7 +356,7 @@ fn solve_puzzle(input_filename: String, part_2: bool) -> usize {
             }
 
             for row in (0..tile_map.len()).rev() {
-                pipe_count_map[row][col].down = (current_above_count - pipe_count_map[row][col].up);
+                pipe_count_map[row][col].down = current_above_count - pipe_count_map[row][col].up;
             }
         }
 
@@ -408,26 +408,24 @@ fn solve_puzzle(input_filename: String, part_2: bool) -> usize {
                 }
             }
 
-            let all_left_side: Vec<usize> = pipe_count_map[row].iter().map(|x| x.left).collect::<Vec<usize>>();
+            let _all_left_side: Vec<usize> = pipe_count_map[row].iter().map(|x| x.left).collect::<Vec<usize>>();
             //println!("Beginning cols for row {}", row);
             //println!("\tcurrent_left_count = {}", current_left_count);
-            //println!("\t{:?}", all_left_side);
+            //println!("\t{:?}", _all_left_side);
 
             for col in (0..tile_map[0].len()).rev() {
                 //println!("\t\tSetting right for {} = {}", col, (current_left_count - pipe_count_map[row][col].left));
-                pipe_count_map[row][col].right = (current_left_count - pipe_count_map[row][col].left);
+                pipe_count_map[row][col].right = current_left_count - pipe_count_map[row][col].left;
             }
         }
 
 
-        let mut inside_count = 0;
         for row in 0..tile_map.len() {
             for col in 0..tile_map[0].len() {
                 if tile_map[row][col] != TileType::Pipe {
                     let pc = &pipe_count_map[row][col];
                     if pc.up % 2 == 1 && pc.down % 2 == 1 && pc.left % 2 == 1 && pc.right %2 == 1 {
                         tile_map[row][col] = TileType::Inside;
-                        inside_count += 1;
                     } else {
                         tile_map[row][col] = TileType::Outside;
                     }
@@ -438,7 +436,7 @@ fn solve_puzzle(input_filename: String, part_2: bool) -> usize {
         let mut count_inside = 0;
         for row in 0..tile_map.len() {
             let mut row_string = String::new();
-            let mut other_row_string = String::new();
+            // let mut other_row_string = String::new();
             for col in 0..tile_map[0].len() {
                 row_string.push(tile_map[row][col].as_char());
                 if tile_map[row][col] == TileType::Inside {

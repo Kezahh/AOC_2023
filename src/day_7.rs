@@ -89,7 +89,6 @@ impl Hand {
                 HandType::TwoPair => new_hand.hand_type = HandType::FullHouse,
                 HandType::OnePair => new_hand.hand_type = HandType::ThreeOfAKind,
                 HandType::HighCard => new_hand.hand_type = HandType::OnePair,
-                _ => (),
             }
         } else if new_hand.joker_count == 2 {
             match new_hand.hand_type {
@@ -100,7 +99,6 @@ impl Hand {
                 HandType::TwoPair => new_hand.hand_type = HandType::FourOfAKind,
                 HandType::OnePair => new_hand.hand_type = HandType::ThreeOfAKind,
                 HandType::HighCard => (),
-                _ => (),
             }
         } else if new_hand.joker_count == 3 {
             match new_hand.hand_type {
@@ -111,7 +109,6 @@ impl Hand {
                 HandType::TwoPair => (),
                 HandType::OnePair => (),
                 HandType::HighCard => (),
-                _ => (),
             }
         } else if new_hand.joker_count == 4 {
             match new_hand.hand_type {
@@ -122,7 +119,6 @@ impl Hand {
                 HandType::TwoPair => (),
                 HandType::OnePair => (),
                 HandType::HighCard => (),
-                _ => (),
             }
         }
 

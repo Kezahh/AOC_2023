@@ -58,8 +58,6 @@ impl GalaxyMap {
         }
 
         let mut galaxies: Vec<Galaxy> = Vec::new();
-
-        let mut final_map: Vec<Vec<DataType>> = Vec::new();
         let mut row_count: usize = 0;
         
         for row in 0..first_map.len() {
@@ -99,7 +97,7 @@ impl GalaxyMap {
 }
 
 
-fn solve_puzzle(input_filename: String, part_2: bool, empty_space_add: usize) -> usize {
+fn solve_puzzle(input_filename: String, _part_2: bool, empty_space_add: usize) -> usize {
     let input_lines: Vec<String> = generic::read_in_file(input_filename.as_str());
     let galaxy_map: GalaxyMap = GalaxyMap::from_input_lines(&input_lines, empty_space_add);
 

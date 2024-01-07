@@ -41,7 +41,7 @@ impl Race {
 
     fn get_ways_to_win(&self) -> usize {
         let race_times: Vec<usize> = self.get_times();
-        return (race_times[1] - race_times[0] + 1);
+        return race_times[1] - race_times[0] + 1;
     }
 }
 

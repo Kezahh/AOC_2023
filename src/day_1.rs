@@ -1,7 +1,7 @@
 #[warn(dead_code)]
 use crate::generic;
 
-#[derive(Debug, Clone)]
+#[derive(Clone)]
 struct NumberWord {
     number: String,
     number_real: usize,
@@ -30,7 +30,7 @@ fn solve_part_one(input_lines: Vec<String>) -> usize {
     return answer_numbers.iter().sum();
 }
 
-fn solve_part_two(mut input_lines: Vec<String>) -> usize {
+fn _solve_part_two(mut input_lines: Vec<String>) -> usize {
     let input_lines_original = input_lines.clone();
     let number_words: Vec<&str> = vec!["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
     
