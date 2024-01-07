@@ -1,6 +1,5 @@
 const INPUTS_FOLDER: &str = "src/inputs/day_x";
 
-#[warn(dead_code)]
 use crate::generic;
 
 
